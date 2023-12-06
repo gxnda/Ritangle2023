@@ -1,6 +1,8 @@
 from itertools import permutations
 from functools import reduce as fold
+from time import time
 
+start = time()
 
 def get_all_permutations(string: str) -> list:
     # itertools coming in clutch
@@ -25,4 +27,6 @@ for string in perms:
     right = string[5:]
     if product_of_string(left) < product_of_string(right):
         counter += 1
-print(counter / len(perms))
+end = time()
+print(f"Time taken: {end - start}s")
+print(f"Result: {counter / len(perms)}")
